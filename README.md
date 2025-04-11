@@ -4,9 +4,9 @@ This project presents a Bluetooth-controlled robotic vehicle (RCV) built using a
 
 The system integrates GPIO-based motor control via L298N motor driver boards, Bluetooth communication for wireless command input, and real-time camera feedback. The project aims to serve as a foundation for future development in remote-controlled systems operating in hazardous or constrained environments.
 
-The attached link is to view the Live Video Streaming of the Raspberry Pi Camera: https://www.youtube.com/shorts/BYkzvP-pS94
+**The attached link is to view the Live Video Streaming of the Raspberry Pi Camera**: https://www.youtube.com/shorts/BYkzvP-pS94
 
-The attached link is to view the movement of the RCV using the custom built mobile app: 
+**The attached link is to view the movement of the RCV using the custom built mobile app**: 
 https://www.youtube.com/watch?v=1j99lfryHSs
 
 
@@ -41,9 +41,44 @@ https://www.youtube.com/watch?v=1j99lfryHSs
    ```bash
    sudo raspi-config
 
-   ---
 
-4. **How to Run the Code (Simple Walkthrough)**
+---
+
+## SSH Access via VS Code
+
+You can write and test code on the Raspberry Pi remotely using Visual Studio Code with SSH.
+
+### Steps:
+
+1. **Enable SSH on the Raspberry Pi**  
+   Open a terminal on the Pi and run:
+   ```bash
+   sudo raspi-config
+   
+2. **Navigate to**
+Interface Options > SSH > Enable
+Install "Remote - SSH" extension in VS Code
+
+3. Open VS Code on your computer.
+Go to the Extensions tab (or press Ctrl+Shift+X).
+Search for and install: Remote - SSH by Microsoft.
+
+4. Connect to the Raspberry Pi
+Press Ctrl+Shift+P and type:
+makefile
+Copy
+Edit
+Remote-SSH: Connect to Host...
+Enter your Pi's IP address in the format:
+**pi@192.168.x.x**
+When prompted, enter the password for your Pi (default is raspberry if not changed).
+
+5. Start coding remotely!
+VS Code will open a new window connected to your Pi. You can now write, edit, and run code on the Raspberry Pi as if it were a local project.
+
+
+
+**How to Run the Code (Simple Walkthrough)**
 Follow these steps to get the project up and running:
 1. **Connect all hardware**: Make sure your motors, motor drivers, Raspberry Pi, camera, and power supplies are properly wired.
 2. **Power up the Pi**: Boot into Raspberry Pi OS.
@@ -55,14 +90,14 @@ python3 "Proper final code.py"
 
 
 
-5. **Acessing MIT App Inventor**
+**Acessing MIT App Inventor**
 This is the link to access the MIT App Inventor: https://ai2.appinventor.mit.edu/#5850147641688064 you can edit this file with the app components and the logic inside it.
 ![image](https://github.com/user-attachments/assets/b00172d7-1c3e-4747-ac78-96361a851609)
-If you click or view on that link it will give you the QR Code to access and Download the app onto your phone. 
+The QR Code is to access and Download the app onto your phone. 
 
 
 
-6. **Technical Details**
+**Technical Details**
 Motor control is handled using PWM signals sent via the Raspberry Pi’s GPIO pins. The L298N drivers interpret those signals to control motor speed and direction.
 
 Bluetooth communication uses the **pybluez** library, which allows the Pi to act as a Bluetooth server, listening for single-character commands from the app.
@@ -75,8 +110,12 @@ Power system was designed to supply approximately 6.5–7 W during peak use, d
 
 No complex equations were used, but digital signal timings (e.g., PWM duty cycles) were tuned manually for motor behaviour.
 
+**The following link will help with Camera Live stream**: https://pimylifeup.com/raspberry-pi-webcam-server/
+**The following link will helo with setting up Bluetooth on Raspberry Pi**: https://www.youtube.com/watch?v=sY06F_sPef4
+**The following link will help with Raspberry Pi setup, hardware and software**: https://www.raspberrypi.com/documentation/
 
-7. **Known Issues and Future Improvements**
+
+**Known Issues and Future Improvements**
 Bluetooth range is limited (~10–15 m indoors). Replacing it with Wi-Fi would allow more flexible control and longer range.
 
 Camera quality drops in low light, resulting in blur or lower FPS.
