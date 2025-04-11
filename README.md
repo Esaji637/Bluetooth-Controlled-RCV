@@ -111,7 +111,9 @@ Power system was designed to supply approximately 6.5–7 W during peak use, d
 No complex equations were used, but digital signal timings (e.g., PWM duty cycles) were tuned manually for motor behaviour.
 
 **The following link will help with Camera Live stream**: https://pimylifeup.com/raspberry-pi-webcam-server/
+
 **The following link will helo with setting up Bluetooth on Raspberry Pi**: https://www.youtube.com/watch?v=sY06F_sPef4
+
 **The following link will help with Raspberry Pi setup, hardware and software**: https://www.raspberrypi.com/documentation/
 
 
